@@ -16,8 +16,10 @@
 
   <link rel="preload" href="assets/fonts/static/PlusJakartaSans-Medium.ttf" as="font" type="font/ttf">
   <link rel="preload" href="assets/fonts/static/PlusJakartaSans-ExtraBold.ttf" as="font" type="font/ttf">
-  
+
   <link rel="stylesheet" href="style.css">
+
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="container">
@@ -27,7 +29,7 @@
         <span class="pill">3</span>
         <span class="sr-only">unread</span>
       </span>
-      <button type="button" class="btn-read-all">Mark all as read</button>
+      <button type="button" class="btn-read-all js-read-all">Mark all as read</button>
     </header>
   
     <article class="notification unread">
@@ -37,7 +39,7 @@
           <a class="username" href="#">Mark Webber</a>
           reacted to your recent post
           <a class="link-post" href="#">My first tournament today!</a
-            ><span role="status" aria-label="unread" class="unread-indicator"></span>
+            ><span role="status" aria-label="unread" class="unread-indicator js-unread-indicator"></span>
           </p>
         <p class="relative-time">1m ago</p>
       </div>
@@ -48,7 +50,7 @@
       <div>
         <p class="content">
           <a class="username" href="#">Angela Gray</a>
-          followed you<span role="status" aria-label="unread" class="unread-indicator"></span>
+          followed you<span role="status" aria-label="unread" class="unread-indicator js-unread-indicator"></span>
         </p>
         <p class="relative-time">5m ago</p>
       </div>
@@ -61,7 +63,7 @@
           <a class="username" href="#">Jacob Thompson</a>
           has joined your group 
           <a class="link-group" href="#">Chess Club</a
-          ><span role="status" aria-label="unread" class="unread-indicator"></span>
+          ><span role="status" aria-label="unread" class="unread-indicator js-unread-indicator"></span>
         </p>
         <p class="relative-time">1 day ago</p>
       </div>
