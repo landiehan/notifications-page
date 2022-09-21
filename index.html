@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Notifications page</title>
 
@@ -13,89 +13,113 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+
+  <link rel="preload" href="assets/fonts/static/PlusJakartaSans-Medium.ttf" as="font" type="font/ttf">
+  <link rel="preload" href="assets/fonts/static/PlusJakartaSans-ExtraBold.ttf" as="font" type="font/ttf">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>
-      <span>Notifications</span>  
-      <span>3</span>
-    </h1>
-    <button>Mark all as read</button>
-  </header>
-
-  <article>
-    <img src="./assets/images/avatar-mark-webber.webp" alt="">
-    <p>
-      <b>Mark Webber</b>
-      reacted to your recent post
-      <a href="#">My first tournament today!</a>
-      <span aria-label="unread"></span>
-    </p>
-    <p>1m ago</p>
-  </article>
-
-  <article>
-    <img src="./assets/images/avatar-angela-gray.webp" alt="">
-    <p>
-      <b>Angela Gray</b>
-      followed you
-    </p>
-    <p>5m ago</p>
-    <span aria-label="unread"></span>
-  </article>
-
-  <article>
-    <img src="./assets/images/avatar-jacob-thompson.webp" alt="">
-    <p>
-      <b>Jacob Thompson</b> 
-      has joined your group 
-      <a href="#">Chess Club</a>
-    </p>
-    <p>1 day ago</p>
-    <span aria-label="unread"></span>
-  </article>
-
-  <article>
-    <img src="./assets/images/avatar-rizky-hasanuddin.webp" alt="">
-    <p>
-      <b>Rizky Hasanuddin</b> 
-      sent you a private message
-    </p>
-    <p>5 days ago</p>
-    <p>
-      Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
-      I'm already having lots of fun and improving my game.
-    </p>
-  </article>
-
-  <article>
-    <img src="./assets/images/avatar-kimberly-smith.webp" alt="">
-    <p>
-      <b>Kimberly Smith</b> 
-      commented on your picture
-    </p>
-    <p>1 week ago</p>
-  </article>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">Notifications</h1>
+      <span>
+        <span class="pill">3</span>
+        <span class="sr-only">unread</span>
+      </span>
+      <button type="button" class="btn-read-all">Mark all as read</button>
+    </header>
   
-  <article>
-    <img src="./assets/images/avatar-nathan-peterson.webp" alt="">
-    <p>
-      <b>Nathan Peterson</b> 
-      reacted to your recent post 
-      <a href="#">5 end-game strategies to increase your win rate</a>
-    </p>
-    <p>2 weeks ago</p>
-  </article>
-
-  <article>
-    <img src="./assets/images/avatar-anna-kim.webp" alt="">
-    <p>
-      <b>Anna Kim</b> 
-      left the group 
-      <a href="#">Chess Club</a>
-    </p>
-    <p>2 weeks ago</p>
-  </article>
+    <article class="notification unread">
+      <img class="avatar" src="./assets/images/avatar-mark-webber.webp" alt="">
+      <div>
+        <p class="content">
+          <a class="username" href="#">Mark Webber</a>
+          reacted to your recent post
+          <a class="link-post" href="#">My first tournament today!</a
+            ><span role="status" aria-label="unread" class="unread-indicator"></span>
+          </p>
+        <p class="relative-time">1m ago</p>
+      </div>
+    </article>
+  
+    <article class="notification unread">
+      <img class="avatar" src="./assets/images/avatar-angela-gray.webp" alt="">
+      <div>
+        <p class="content">
+          <a class="username" href="#">Angela Gray</a>
+          followed you<span role="status" aria-label="unread" class="unread-indicator"></span>
+        </p>
+        <p class="relative-time">5m ago</p>
+      </div>
+    </article>
+  
+    <article class="notification unread">
+      <img class="avatar" src="./assets/images/avatar-jacob-thompson.webp" alt="">
+      <div>
+        <p class="content">
+          <a class="username" href="#">Jacob Thompson</a>
+          has joined your group 
+          <a class="link-group" href="#">Chess Club</a
+          ><span role="status" aria-label="unread" class="unread-indicator"></span>
+        </p>
+        <p class="relative-time">1 day ago</p>
+      </div>
+    </article>
+  
+    <article class="notification">
+      <img class="avatar" src="./assets/images/avatar-rizky-hasanuddin.webp" alt="">
+      <div>
+        <p class="content">
+          <a class="username" href="#">Rizky Hasanuddin</a>
+          sent you a private message
+        </p>
+        <p class="relative-time">5 days ago</p>
+        <p class="private-message">
+          Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+          I'm already having lots of fun and improving my game.
+        </p>
+      </div>
+    </article>
+  
+    <article class="notification">
+      <img class="avatar" src="./assets/images/avatar-kimberly-smith.webp" alt="">
+      <div>
+        <p class="content">
+          <a class="username" href="#">Kimberly Smith</a>
+          commented on your picture
+        </p>
+        <p class="relative-time">1 week ago</p>
+      </div>
+      <a class="link-picture" href="#">
+        <img src="./assets/images/image-chess.webp" alt="A girl is playing chess">
+      </a>
+    </article>
+    
+    <article class="notification">
+      <img class="avatar" src="./assets/images/avatar-nathan-peterson.webp" alt="">
+      <div>
+        <p class="content">
+          <a class="username" href="#">Nathan Peterson</a>
+          reacted to your recent post 
+          <a class="link-post" href="#">5 end-game strategies to increase your win rate</a>
+        </p>
+        <p class="relative-time">2 weeks ago</p>
+      </div>
+    </article>
+  
+    <article class="notification">
+      <img class="avatar" src="./assets/images/avatar-anna-kim.webp" alt="">
+      <div>
+        <p class="content">
+          <a class="username" href="#">Anna</a>
+          left the group 
+          <a class="link-group" href="#">Chess Club</a>
+        </p>
+        <p class="relative-time">2 weeks ago</p>
+      </div>
+    </article>
+  </div>
   
   <p class="attribution">
     Challenge by
